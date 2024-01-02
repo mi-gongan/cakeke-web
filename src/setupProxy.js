@@ -3,7 +3,7 @@ const { createProxyMiddleware } = require("http-proxy-middleware");
 module.exports = function (app) {
   app.use(
     createProxyMiddleware("/curation", {
-      target: process.env.REACT_APP_API_URL,
+      target: "http://52.79.120.153:8080/Cakeke",
       changeOrigin: true,
     })
   );
