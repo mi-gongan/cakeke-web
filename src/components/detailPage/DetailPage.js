@@ -14,7 +14,9 @@ function DetailPage() {
   const [markdown, setMarkdown] = useState(``);
 
   useEffect(() => {
-    if (!currentCuration.mdUrl) return;
+    if (!currentCuration.mdUrl) {
+      navigate("/");
+    }
     fetch(currentCuration.mdUrl)
       .then((res) => res.text())
       .then((text) => setMarkdown(text));
@@ -50,6 +52,28 @@ function DetailPage() {
           style={{
             backgroundColor: "white",
             color: "black",
+          }}
+          rehypeRewrite={(node) => {
+            console.log(node);
+            if (node.tagName === "h1") {
+              node.properties.style =
+                "font-size: 28px; font-weight: 700; border-bottom: none";
+            }
+            if (node.tagName === "h2") {
+              node.properties.style =
+                "font-size: 20px; font-weight: 700; border-bottom: none";
+            }
+            if (node.tagName === "h3") {
+              node.properties.style =
+                "font-size: 16px; font-weight: 700; border-bottom: none";
+            }
+            if (
+              node.type === "text" &&
+              typeof node.value === "string" &&
+              node.value.includes("&&")
+            ) {
+              node.properties.style = "font-size: 12px; color: #858585";
+            }
           }}
         />
       </div>
