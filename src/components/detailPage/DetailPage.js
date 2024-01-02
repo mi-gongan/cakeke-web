@@ -14,13 +14,14 @@ function DetailPage() {
   const [markdown, setMarkdown] = useState(``);
 
   useEffect(() => {
+    if (!navigate) return;
     if (!currentCuration.mdUrl) {
       navigate("/");
     }
     fetch(currentCuration.mdUrl)
       .then((res) => res.text())
       .then((text) => setMarkdown(text));
-  }, [currentCuration]);
+  }, [currentCuration, navigate]);
 
   return (
     <div className="detail">
