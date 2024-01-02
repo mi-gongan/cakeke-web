@@ -54,7 +54,6 @@ function DetailPage() {
             color: "black",
           }}
           rehypeRewrite={(node) => {
-            console.log(node);
             if (node.tagName === "h1") {
               node.properties.style =
                 "font-size: 28px; font-weight: 700; border-bottom: none";
