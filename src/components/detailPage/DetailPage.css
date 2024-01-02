@@ -1,6 +1,5 @@
 .detail {
   width: 100%;
-  background: #fff;
 }
 
 .detail-head {
@@ -40,7 +39,6 @@
 
 .cover-title {
   color: #fff;
-  font-family: Pretendard;
   font-size: 36px;
   font-style: normal;
   font-weight: 700;
@@ -50,13 +48,13 @@
 
 .cover-date {
   color: rgba(255, 255, 255, 0.7);
-  font-family: Pretendard;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
   line-height: 150%; /* 21px */
 }
 
-.detail-description {
+.markdown {
   padding: 48px 16px;
+  max-width: 500px;
 }

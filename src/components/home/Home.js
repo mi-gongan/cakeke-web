@@ -47,7 +47,7 @@ function Home() {
                 alignItems: "center",
               }}
             >
-              <div className="tag">{item.tag}</div>
+              <div className="tag"># {item.tag}</div>
             </div>
             <div className="title">{item.title}</div>
             <div className="description">{item.description}</div>

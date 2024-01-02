@@ -7,7 +7,6 @@
   flex-shrink: 0;
 
   color: #000;
-  font-family: Pretendard;
   font-size: 24px;
   font-style: normal;
   font-weight: 700;
@@ -43,7 +42,6 @@
   background: var(--Primary-Color, #ff4170);
 
   color: #fff;
-  font-family: Pretendard;
   font-size: 14px;
   font-style: normal;
   font-weight: 700;
@@ -52,7 +50,7 @@
 
 .title {
   color: #fff;
-  font-family: Pretendard;
+
   font-size: 30px;
   font-style: normal;
   font-weight: 700;
@@ -63,7 +61,6 @@
 
 .description {
   color: #fff;
-  font-family: Pretendard;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
