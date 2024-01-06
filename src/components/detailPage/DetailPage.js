@@ -6,6 +6,8 @@ import { currentCurationAtom } from "../../store/atom";
 import { useNavigate } from "react-router-dom";
 import MDEditor from "@uiw/react-md-editor";
 import BackButton from "../icon/BackButton";
+import { mdRehypeRewrite } from "../../util/option";
+import remarkGfm from "remark-gfm";
 
 function DetailPage() {
   const navigate = useNavigate();
@@ -49,32 +51,13 @@ function DetailPage() {
       </div>
       <div className="markdown">
         <MDEditor.Markdown
+          remarkPlugins={[remarkGfm]}
           source={markdown}
           style={{
             backgroundColor: "white",
             color: "black",
           }}
-          rehypeRewrite={(node) => {
-            if (node.tagName === "h1") {
-              node.properties.style =
-                "font-size: 28px; font-weight: 700; border-bottom: none";
-            }
-            if (node.tagName === "h2") {
-              node.properties.style =
-                "font-size: 20px; font-weight: 700; border-bottom: none";
-            }
-            if (node.tagName === "h3") {
-              node.properties.style =
-                "font-size: 16px; font-weight: 700; border-bottom: none";
-            }
-            if (
-              node.type === "text" &&
-              typeof node.value === "string" &&
-              node.value.includes("&&")
-            ) {
-              node.properties.style = "font-size: 12px; color: #858585";
-            }
-          }}
+          rehypeRewrite={mdRehypeRewrite}
         />
       </div>
     </div>
