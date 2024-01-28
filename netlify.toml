@@ -2,3 +2,7 @@
   from = "/curation"
   to = "http://52.79.120.153:8080/Cakeke/curation"
   status = 200
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
