@@ -3,17 +3,14 @@ import "./Home.css";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useSetRecoilState } from "recoil";
-import { currentCurationAtom } from "../../store/atom";
 
 function Home() {
   const navigate = useNavigate();
   const [curationList, setCurationList] = useState([]);
-  const setCurrentCuration = useSetRecoilState(currentCurationAtom);
 
   const getCuration = async () => {
     const response = await axios.get("/curation");
-    const data = await response.data.curationDTOList;
+    const data = await response.data.curationPreviewDTOList;
     setCurationList(data);
   };
 
@@ -36,8 +33,7 @@ function Home() {
               borderRadius: "20px",
             }}
             onClick={() => {
-              setCurrentCuration(item);
-              navigate("/detail");
+              navigate("/detail?curationId=" + item.id);
             }}
           >
             <div
@@ -50,7 +46,6 @@ function Home() {
               <div className="tag"># {item.tag}</div>
             </div>
             <div className="title">{item.title}</div>
-            <div className="description">{item.description}</div>
           </div>
         ))}
       </div>
