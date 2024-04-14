@@ -40,12 +40,13 @@ function DetailPage() {
       const handleTouchEnd = (e) => {
         const touchEndX = e.changedTouches[0].clientX;
         const touchEndY = e.changedTouches[0].clientY;
-        console.log(touchStartX, touchEndX, touchStartY, touchEndY);
         if (
           touchEndX - touchStartX > 50 &&
           Math.abs(touchEndY - touchStartY) < 50
         ) {
           navigate("/");
+          document.removeEventListener("touchend", handleTouchEnd);
+          document.removeEventListener("touchstart", handleTouchStart);
         }
       };
 
