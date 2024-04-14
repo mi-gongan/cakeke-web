@@ -1,6 +1,6 @@
 [[redirects]]
-  from = "/curation*"
-  to = "http://52.79.120.153:8080/Cakeke/curation*"
+  from = "/api/*"
+  to = "http://52.79.120.153:8080/Cakeke/*"
   status = 200
 [[redirects]]
   from = "/*"

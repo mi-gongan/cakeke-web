@@ -16,7 +16,7 @@ function DetailPage() {
   const [markdown, setMarkdown] = useState(``);
 
   const getCuration = async () => {
-    const response = await axios.get(`/curation/${curationId}`);
+    const response = await axios.get(`/api/curation/${curationId}`);
     setCuration(response.data);
   };
 

@@ -9,7 +9,7 @@ function Home() {
   const [curationList, setCurationList] = useState([]);
 
   const getCuration = async () => {
-    const response = await axios.get("/curation");
+    const response = await axios.get("/api/curation");
     const data = await response.data.curationPreviewDTOList;
     setCurationList(data);
   };
