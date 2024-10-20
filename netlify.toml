@@ -1,6 +1,6 @@
 [[redirects]]
   from = "/api/*"
-  to = "http://52.79.120.153:8080/Cakeke/:splat"
+  to = "https://jeatest.store/Cakeke/:splat"
   status = 200
   force = true
 [[redirects]]
